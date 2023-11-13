@@ -1,0 +1,233 @@
+.aside {
+    padding: 10px;
+    margin: 0;
+}
+
+.asideIcons{
+    color: var(--color-text);
+    padding: 0;
+}
+.header-menu-link{
+    width: 95%;
+}
+.header-menu.nav-item{
+    list-style: none;
+    margin: 0 0 0 5px;
+    padding: 0px 3px;
+    font-size: 1.25rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+   align-items: center;
+   line-height: 2.7rem;
+   transition: all 100ms ease-in-out;
+cursor: pointer;
+}
+
+.header-menu.nav-item:active{
+    color: #111111;
+    box-shadow: 5px 3px 10px #c2c0c0;
+    border-radius: 10px;
+
+    }
+
+ul .header-icon{
+    padding: 0px;
+    margin: 0px 5px 5px;
+    
+}
+
+@media(max-width: 991px) {
+    .container {
+        height: 100%;
+        width: 100%;
+    }
+  
+   
+    
+    .header-menu-link {
+     
+        margin: 0 10px;
+    }
+
+   
+}
+
+@media(max-width: 767px) {
+/*.aside.active{
+  display: flex;
+  flex-grow: calc(1fr);
+    padding-right: 15px;
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
+}
+
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0px ;
+
+    
+        height: auto;
+    width: 100%;
+    
+    }*/
+   
+.aside{
+    
+       /* display: flex;
+         justify-content: space-around;
+         padding: 0px;
+         margin: 0 ;
+     box-sizing: border-box;*/
+     position: relative;
+     display: flex;
+     flex-direction: column-reverse;
+     align-items: center;
+margin: 0 auto;
+min-width: 100%;
+padding: 0 5px;
+
+     }
+
+    .header-header{
+        display: flex; /* Отображение лого и бургера в ряд */
+        justify-content: space-between; /* Распределение элементов по ширине контейнера */
+        align-items:start;
+        padding-right: 15px;
+        position: absolute;
+        top: -0px;
+    }
+   
+    .navbar-collapse{
+
+       /* Позиционирование списка абсолютно относительно navbar */
+        top: 90%; /* Располагается под navbar */
+        left: 0;
+        width: 100%;
+        min-height: 90vh; /* Занимает всю ширину экрана */
+     
+       padding-top: 80px;
+        /* Цвет фона списка */
+       
+    }
+    .navbar-toggler.collapsed + .navbar-collapse {
+        display: block; /* Показать список при активированном бургер-меню */
+      }
+    /*.navbar-collapse.active{
+        display: flex;
+        flex-direction: column;
+    }
+*/
+  
+.navbar-collapse{
+   
+    display: flex;
+   
+}
+   
+   
+    .header-menu-link {
+      
+       
+height: 70%;
+            margin: 0px auto;
+            font-size: 24px;
+            padding: 10px 10px;
+            width: 50%;
+         text-align: center;
+
+        }
+        
+        .header-menu.nav-item {
+            display: flex;
+            justify-content: center;
+            padding: 5px 5px 6px;
+            margin: 6px 5px;
+            text-align: center;
+     height: 100%;
+     line-height: normal;
+        }
+        
+}
+
+@media(max-width: 575px) {
+  
+    .aside {
+       /* display: flex;
+         justify-content: space-around;
+         padding: 0px;
+         margin: 0 ;
+     box-sizing: border-box;*/
+     display: flex;
+     flex-direction: column-reverse;
+     align-items: center;
+margin: 0 auto;
+min-width: 100%;
+padding: 0 5px;
+
+     }
+    
+      
+    
+
+
+    .img-header {
+        margin: 0px auto;
+        height: 15vh;
+    }
+    
+   
+    
+    
+    .header-menu.nav-item {
+        padding: 10px 6px;
+        margin: 6px auto;
+      
+ width: 60%;
+    }
+   
+    .header-menu-link{
+        width: 90%;
+        
+    }
+}
+
+@media(max-width: 414px) {
+    .aside {
+        /* display: flex;
+          justify-content: space-around;
+          padding: 0px;
+          margin: 0 ;
+      box-sizing: border-box;*/
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+ margin: 0 auto;
+ min-width: 100%;
+ padding: 0;
+ padding: 0 5px;
+      }
+
+    
+      .navbar-collapse{
+
+        /* Позиционирование списка абсолютно относительно navbar */
+         top: 70%; /* Располагается под navbar */
+         left: 0;
+         width: 100%;
+         min-height: 90vh; /* Занимает всю ширину экрана */
+      
+        padding-top: 0px;
+         /* Цвет фона списка */
+        
+     }
+     .header-menu-link {
+      
+       
+        height: 60%;
+     }
+  
+}

@@ -1,0 +1,39 @@
+.listItem{
+        margin: 0 0px;
+        padding: 0 15px;
+    
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+}
+
+.menuLink{
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+
+    text-decoration: none;
+    margin: 0 5px;
+    color: #06a6f0;
+}
+
+.menuLinkUser{
+    color: inherit;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0 5px;
+    color: #6d6d6d;
+}
+
+/*.Content{
+    background-color: blueviolet;
+}*/
+
+@media(max-width: 414px){
+
+    .listItem{
+        margin: 15px 0px;
+       
+    }
+}
