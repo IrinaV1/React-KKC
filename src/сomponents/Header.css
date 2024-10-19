@@ -36,18 +36,32 @@
      justify-content: space-between;
      margin: 5px 5px;
  width: 100%;
+
  }
  
  .navbar-input {
- 
+ outline: none;
      border: none;
      border-radius: 5px;
      height: 36px;
      background-color: #fff;
-     margin: 5px 5px;
+     margin: 5px 0px;
  width: 95%;
+padding-left: 25px;
+ position: relative;
  }
  
+
+ .navbar-search-n{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 28px;
+
+  padding: 0 5px;
+    z-index: 1;
+ }
+
  .navbar-button {
      border: none;
      border-radius: 5px;
@@ -247,7 +261,9 @@ width: 95%;
 align-items: flex-start;
         margin:  0px ;
 min-width: 90%;
-    }
+       padding-left: 25px;
+        position: relative;
+        }
 
     .navbar-button {
 
@@ -283,6 +299,11 @@ position: relative;
         position: absolute;
         top: 0px;
         width: 40%;
+    }
+
+    .navbar-search-n{
+       position: absolute;
+       top: 102px;
     }
      .navbar-personal{
         display: flex;
@@ -355,7 +376,11 @@ width: auto;
  padding: 0 ;
  position: relative;
       }
-
+      .navbar-search-n {
+        position: absolute;
+        top: 18px;
+        left: 6px
+     }
     .navbar-form{
         display: flex;
    flex-wrap: nowrap;

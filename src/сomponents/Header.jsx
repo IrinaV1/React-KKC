@@ -4,7 +4,7 @@ import {RxExit} from 'react-icons/rx';
 import 'bootstrap/dist/css/bootstrap.css';
 import UserImage from '../logo/user.jpg';
 import '../сomponents/Header.css';
-
+import { IoSearchOutline } from "react-icons/io5";
 
 function Header({ headerInfo, onExitClick }) {
    
@@ -25,8 +25,8 @@ function Header({ headerInfo, onExitClick }) {
 
                 <div className="col-sm-6 col-md-6 col-lg-7 p-0 pe-1 ps-0 ">
                     <form className="navbar-form" role="search">
-          
-                        <input className="navbar-input ps-2 pe-2" type="text"  placeholder="🔍 Search" /> 
+                  <div className='navbar-search-n'> <IoSearchOutline className='navbar-search' /> </div> 
+                        <input className="navbar-input  ps-8 pe-2" type="text"  placeholder="Search" /> 
                       
                         <button className="navbar-button" type="submit"><BsBell /> <i className="bi bi-bell"></i>
                         <span className="position-absolute top-5 start-90 translate-middle p-1 bg-danger border border-light rounded-circle" >
