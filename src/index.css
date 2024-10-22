@@ -73,7 +73,7 @@ min-height: 100%;
     }
     .wrapper {
         display: grid;
-        grid-template-rows: 1fr 7fr;
+        grid-template-rows: 1fr 8fr;
         width: 100%;
     }
 }
@@ -82,7 +82,7 @@ min-height: 100%;
 @media(max-width: 414px) {
     .wrapper {
         display: grid;
-        grid-template-rows: 1fr 7fr;
+        grid-template-rows: 1fr 9fr;
      
         width: 100%;
     }

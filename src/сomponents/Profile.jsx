@@ -10,6 +10,13 @@ function Profile({ onSave, headerInfo }) {
   const [username, setUsername] = useState("");
   const fileInputRef = React.createRef();
 
+
+const [activeIndex, setActiveIndex] = useState(0);
+
+const handleClick = (index) => {
+  setActiveIndex(index);
+}
+
   function handleImageUpload() {
     fileInputRef.current.click();
   }
@@ -53,7 +60,6 @@ function Profile({ onSave, headerInfo }) {
     setUsername(headerInfo.username);
   }, [headerInfo]);
    
-     
   
       
   return ( 
@@ -62,11 +68,16 @@ function Profile({ onSave, headerInfo }) {
         <div className="profile ">Profile</div>
 
         <div className="profile-info container-fluid ">
-            <ul className="profile-li ">
-                <li className=" active">User Info</li>
-                <li className="profile-info-li">Address</li>
-                <li className="profile-info-li">Contact</li>
-                <li className="profile-info-li">Social Networks</li>
+            <ul className="profile-li">
+              {['User Info', 'Address', 'Contact', 'Social Networks'].map((item, index) => ( 
+                <li
+                 key={index}
+                   className={`profile-info-li ${activeIndex === index ? 'active' : ''} `}
+onClick={() => handleClick(index) }
+>
+        {item} 
+      </li> 
+              ))}
             </ul>
 
 

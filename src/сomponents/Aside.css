@@ -109,7 +109,7 @@ padding: 0 5px;
         width: 100%;
         min-height: 90vh; /* Занимает всю ширину экрана */
      
-       padding-top: 80px;
+       padding-top: 85px;
         /* Цвет фона списка */
        
     }
@@ -179,7 +179,18 @@ padding: 0 5px;
         height: 15vh;
     }
     
-   
+    .navbar-collapse{
+
+        /* Позиционирование списка абсолютно относительно navbar */
+         top: 75%; /* Располагается под navbar */
+         left: 0;
+         width: 100%;
+         min-height: 90vh; /* Занимает всю ширину экрана */
+      
+        padding-top: 0px;
+         /* Цвет фона списка */
+        
+     }
     
     
     .header-menu.nav-item {
@@ -191,7 +202,9 @@ padding: 0 5px;
    
     .header-menu-link{
         width: 90%;
-        
+        margin-top: 10px;
+        padding-top: 40px;
+        height: 83%;
     }
 }
 
@@ -224,10 +237,11 @@ padding: 0 5px;
          /* Цвет фона списка */
         
      }
-     .header-menu-link {
-      
-       
-        height: 60%;
-     }
+     .header-menu-link{
+        width: 90%;
+        margin-top: 0px;
+        padding-top: 40px;
+        height: 83%;
+    }
   
 }
