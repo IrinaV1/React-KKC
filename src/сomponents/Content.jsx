@@ -1,17 +1,31 @@
-import React from 'react';
+
+import React, {useState} from 'react';
 import '../сomponents/Content.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
 const Content = () => {
+
+const [activeIndex, setActiveIndex] = useState(2);
+const handleLinkClick = (index) => {
+setActiveIndex(index);
+}
   return (
     <div className="Content">
         
         <div className="listItem mb-5">
 
 <ul className="menuLink">
-    <li> <a className="menuLink" href="#">Home / </a></li>
-    <li> <a className="menuLink" href="#">Profile / </a></li>
-    <li> <a className="menuLinkUser" href="#">User Info</a> </li>
+  {['Home /', 'Profile /', 'User Info'].map((item, index) => (    
+    <li key={index}> <a className={activeIndex === index ? 'menuLinkUser' : 'menuLink'}
+    href="#"
+onClick={() => handleLinkClick(index)}
+    >
+      {item}
+    </a>
+    </li>
+ 
+    ))}
+
 </ul>
 
 
