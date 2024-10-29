@@ -47,6 +47,7 @@ margin-bottom: 20px;
 
 word-spacing: -0.5px;
     width: calc(100%/4);
+    cursor: pointer;
 }
 
 li.active {

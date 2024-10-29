@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {BsBell} from 'react-icons/bs';
 import {RxExit} from 'react-icons/rx';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -8,8 +8,24 @@ import { IoSearchOutline } from "react-icons/io5";
 
 function Header({ headerInfo, onExitClick }) {
    
+ const [currentTime, setCurrentTime] = useState('');
 
-  
+  useEffect(() => {
+const updateTime = () => {
+    const now = new Date();
+    const options = {hour: 'numeric', minute: 'numeric', hour12: true};
+    const formattedTime = now.toLocaleString('en-US', options);
+    const day = now.getDate();
+    const month = now.toLocaleString('en-US', { month: 'short' });
+    const year = now.getFullYear();
+    const formattedDateTime = `${formattedTime} ${day} ${month} ${year}`;
+    setCurrentTime(formattedDateTime);
+};
+updateTime();
+const timeId = setInterval(updateTime, 1000);
+
+return () => clearInterval(timeId)
+  }, [] )
   return ( 
                 <div className="navbar row row-cols-sm-auto   m-0 p-0" style= {{'--bs-gap': '.5rem'}}>
                    
@@ -17,7 +33,7 @@ function Header({ headerInfo, onExitClick }) {
     <div className="navbar-header">
                         <ul className="navbar-header-ul ">
                             <li className="navbar-header-hello">Hello,{headerInfo.username || "Jack"} </li>
-                            <li className="navbar-header-li">3.15pm 10 Aug 2023</li>
+                            <li className="navbar-header-li">{currentTime}</li>
                         </ul>
                     </div>
                     </div>
