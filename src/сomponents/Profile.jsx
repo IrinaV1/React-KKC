@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import UserImage from '../logo/user.jpg';
 import '../сomponents/Profile.css';
 
 
 function Profile({ onSave, headerInfo }) {
   const [uploadedImage, setUploadedImage] = useState(UserImage);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [username, setUsername] = useState("");
-  const fileInputRef = React.createRef();
+  const [firstName, setFirstName] = useState(headerInfo.firstName || "");
+  const [lastName, setLastName] = useState(headerInfo.lastName || "");
+  const [username, setUsername] = useState(headerInfo.username || "");
+  const fileInputRef = useRef(null);
 
 
 const [activeIndex, setActiveIndex] = useState(0);
@@ -39,25 +39,28 @@ const handleClick = (index) => {
       username,
       uploadedImage,
     });
-  }
+ 
+  };
 
-  function handleFirstNameChange(e) {
+
+  
+  const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
   }
 
-  function handleLastNameChange(e) {
+  const handleLastNameChange = (e) => {
     setLastName(e.target.value);
   }
 
-  function handleUsernameChange(e) {
+  const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   }
 
   useEffect(() => {
-    setUploadedImage(headerInfo.uploadedImage);
-    setFirstName(headerInfo.firstName);
-    setLastName(headerInfo.lastName);
-    setUsername(headerInfo.username);
+    setUploadedImage(headerInfo.uploadedImage || UserImage);
+    setFirstName(headerInfo.firstName || "");
+    setLastName(headerInfo.lastName || "");
+    setUsername(headerInfo.username || "");
   }, [headerInfo]);
    
   
@@ -93,13 +96,20 @@ onClick={() => handleClick(index) }
 
         <form action="#" method="get" className="profile-form  row-cols-lg-9 ">
             <p className="first-name ps-2 pb-0 mt-3 mb-1">First Name <span className="form-name">*</span> </p>
-                <input type="text" onChange={handleFirstNameChange} className="form-control ps-2 pe-2" id="first-name" placeholder="Jack" />
+                <input 
+                type="text"
+                 value={firstName} 
+                 onChange={ handleFirstNameChange} 
+                 className="form-control ps-2 pe-2"
+                  id="first-name" 
+                  placeholder={firstName || "Jack" }
+                  />
            
             <p className="last-name ps-2 pb-0 mt-3 mb-1">Last Name <span className="form-name">*</span></p>
-                <input type="text" onChange={handleLastNameChange} className="form-control w-100 ps-2 pe-2"  id="last-name" placeholder="Douglas" />
+                <input type="text" value={lastName} onChange={handleLastNameChange} className="form-control w-100 ps-2 pe-2"  id="last-name" placeholder="Douglas" />
             
             <p className="username ps-2 pb-0 mt-3 mb-1">Username </p>
-                <input type="text" onChange={handleUsernameChange} className="form-control ps-2 pe-2"  id="username" placeholder="JackD" />
+                <input type="text" value={username} onChange={handleUsernameChange} className="form-control ps-2 pe-2"  id="username" placeholder="JackD" />
             
             <button type="button" className="profile-save mt-4" onClick={handleSaveClick}>Save</button>
 
