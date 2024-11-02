@@ -207,13 +207,21 @@ padding: 6px 8px;
 
 @media(max-width: 414px) {
    
-   
+   .profile-info{
+    padding: 0 5px;
+   }
+   li.active {
+
+    width: 27%;
+
+}
     .profile-li {
   
   
         text-align: center;
-        font-size: 12px;
+        font-size: 11px;
     letter-spacing: -0.5px;
+
     
     }  
     .profile-form {
